@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+</head>
+<body >
+    <nav class="bg-gray-800 text-white sticky top-0 z-50 flex justify-between items-center px-4 py-3">
+        <!-- Left Section -->
+        <div class="flex items-center">
+            <a href="index.html" class="text-white px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-md activehover:bg-gray-700 rounded-md">Home</a>
+        </div>
+
+        <!-- Center Section -->
+        <div class="flex items-center space-x-4 ‍">
+            <div><img src="../assets/logo.png" alt=""></div>
+            <div class="text-xl font-bold">Donate Bangladesh</div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="flex items-center">
+            <span id="balance" class="flex items-center space-x-2">
+                Balance: <img src="../assets/coin.png" alt="coin-icon.png" class="w-5 h-5 mx-2"> $5000
+            </span>
+        </div>
+    </nav>
+
+
+    <div class="collapse collapse-arrow bg-base-200 px-20">
+        <input type="radio" name="my-accordion-2" checked="checked" />
+        <div class="collapse-title text-xl font-medium">1. What is the Document Object Model (DOM)?</div>
+        <div class="collapse-content">
+          <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a document as a tree of objects, where each object corresponds to a part of the document (e.g., elements, attributes, and text). The DOM allows programming languages like JavaScript to manipulate the content, structure, and style of web pages dynamically.</p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-200 px-20">
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
+        <div class="collapse-content">
+          <p>You can select elements from the DOM using various methods provided by the document object. Common methods include getElementById, getElementsByClassName, getElementsByTagName, and querySelector or querySelectorAll. For example, document.getElementById('myId') selects an element with the specified ID.</p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-200 px-20">
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why is it useful?</div>
+        <div class="collapse-content">
+          <p>Event delegation is a technique in JavaScript where a single event listener is added to a parent element instead of individual listeners on child elements. It allows you to handle events for dynamically added elements and improves performance by reducing the number of event listeners. For example, if you have a list and want to listen for clicks on list items, you can attach the listener to the ul instead of each li.</p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-200 px-20">
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using the DOM?</div>
+        <div class="collapse-content">
+          <p>You can manipulate an element's attributes using the setAttribute, getAttribute, and removeAttribute methods. To change styles, you can directly modify the style property of the element. For example, element.style.color = 'red'; changes the text color of the element to red.</p>
+        </div>
+      </div>
+   <!-- FAQ Section (Home) -->
+<section id="homeSection" class="hidden p-6">
+    <h2 class="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+        <div>
+            <h3 class="font-semibold">What is the Document Object Model (DOM)?</h3>
+            <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a document as a tree of objects, where each object is a part of the document's DOM, allowing programming languages ​​such as JavaScript to dynamically manipulate the content, structure, and style of web pages.</p>
+        </div>
+        <div>
+            <h3 class="font-semibold">How do you select an element from the DOM?</h3>
+            <p>You can select DOM elements using methods like <code>document.getElementById()</code>, <code>document.querySelector()</code>, and <code>document.getElementsByClassName()</code>.</p>
+        </div>
+        <div>
+            <h3 class="font-semibold">What is event delegation in the context of the DOM?</h3>
+            <p>Event delegation allows you to add a single event listener to a parent element to manage events from its child elements. It is useful for handling dynamic content.</p>
+        </div>
+        <div>
+            <h3 class="font-semibold">How do you manipulate an element's attributes and styles using the DOM?</h3>
+            <p>You can manipulate attributes and styles using JavaScript methods like <code>setAttribute()</code>, <code>style.property</code>, or by directly altering CSS classes.</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Donation Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-800 text-white sticky top-0 z-50 flex justify-between items-center px-4 py-3">
+        <!-- Left Section -->
+        <div class="flex items-center">
+            <a href="blog.html" id="toggleButton" class="text-white px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-md">Blog</a>
+        </div>
+
+        <!-- Center Section -->
+        <div class="flex items-center space-x-4">
+            <div><img src="../assets/logo.png" alt="Logo"></div>
+            <div class="text-xl font-bold">Donate Bangladesh</div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="flex items-center">
+            <span id="balance" class="flex items-center space-x-2">
+                Balance: <img src="../assets/coin.png" alt="coin-icon" class="w-5 h-5 mx-2"> $5000
+            </span>
+        </div>
+    </nav>
+
+    <!-- Banner section -->
+    <div class="text-white sticky top-16 z-50 flex justify-center gap-5 items-center px-4 py-3 mt-20">
+        <button id="donationBtn" class="text-white px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-md active">Donation</button>
+        <button id="historyBtn" class="text-white px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-md">History</button>
+    </div>
+
+    <!-- Donation Cards Section -->
+    <section id="donationSection" class="p-6 grid grid-cols-1 gap-4">
+        <!-- Donation Card 1 -->
+        <div class="bg-white shadow-lg rounded-lg flex p-4 space-x-4 mx-auto w-full lg:w-6/12">
+            <img src="../assets/noakhali.png" alt="Flood Donation" class="w-1/3 object-cover rounded">
+            <div class="flex flex-col justify-between">
+                <div class="flex items-center">
+                    <img src="../assets/coin.png" alt="">
+                    <p><span id="currentDonation1">$1000</span></p>
+                </div>
+                <h2 class="text-xl font-bold">Flood Relief Donation</h2>
+                <p>Noakhali is frequently affected by devastating floods.</p>
+                <input type="number" id="donationAmount1" placeholder="Write donation amount" class="mt-2 border border-gray-300 rounded-md px-2 py-1 w-full">
+                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 w-full" onclick="donate(1)">Donate Now</button>
+            </div>
+        </div>
+
+        <!-- Donation Card 2 -->
+        <div class="bg-white shadow-lg rounded-lg flex p-4 space-x-4 mx-auto w-full lg:w-6/12">
+            <img src="../assets/feni.png" alt="Flood Donation" class="w-1/3 object-cover rounded">
+            <div class="flex flex-col justify-between">
+                <div class="flex items-center">
+                    <img src="../assets/coin.png" alt="">
+                    <p><span id="currentDonation2">$500</span></p>
+                </div>
+                <h2 class="text-xl font-bold">Flood Relief Donation</h2>
+                <p>Feni is often hit by seasonal floods due to heavy rainfall.</p>
+                <input type="number" id="donationAmount2" placeholder="Write donation amount" class="mt-2 border border-gray-300 rounded-md px-2 py-1 w-full">
+                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 w-full" onclick="donate(2)">Donate Now</button>
+            </div>
+        </div>
+
+        <!-- Donation Card 3 -->
+        <div class="bg-white shadow-lg rounded-lg flex p-4 space-x-4 mx-auto w-full lg:w-6/12">
+            <img src="../assets/quota-protest.png" alt="Flood Donation" class="w-1/3 object-cover rounded">
+            <div class="flex flex-col justify-between">
+                <div class="flex items-center">
+                    <img src="../assets/coin.png" alt="">
+                    <p><span id="currentDonation3">$200</span></p>
+                </div>
+                <h2 class="text-xl font-bold">Aid for Injured in the Quota Movement</h2>
+                <p>The recent quota protest in Bangladesh has garnered significant attention.</p>
+                <input type="number" id="donationAmount3" placeholder="Write donation amount" class="mt-2 border border-gray-300 rounded-md px-2 py-1 w-full">
+                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 w-full" onclick="donate(3)">Donate Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section (Initially Hidden) -->
+    <section id="historySection" class="hidden p-6">
+        <h2 class="text-2xl font-bold mb-4">Donation History</h2>
+        <div id="historyLog" class="border-t border-gray-300 pt-4">
+            <!-- History logs will be displayed here -->
+        </div>
+    </section>
+
+    <!-- Static Modal for Successful Donation -->
+    <div id="successModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 hidden flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center">
+            <h2 class="font-semibold text-xl">Congrats!</h2>
+            <img src="../assets/coin.png" alt="">
+            <h2>You Have Donated for Humankind</h2>
+            <p class="text-xl font-bold text-green-500">Successfully</p>
+            <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600" onclick="closeModal()">Close Confirmation</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
